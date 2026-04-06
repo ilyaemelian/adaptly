@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adaptly - Lesson Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#45dfa4",
+                        "inverse-on-surface": "#283044",
+                        "error-container": "#93000a",
+                        "surface-tint": "#7bd0ff",
+                        "background": "#0b1326",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-primary-container": "#004965",
+                        "surface-bright": "#31394d",
+                        "surface-container": "#171f33",
+                        "surface": "#0b1326",
+                        "on-error": "#690005",
+                        "primary-fixed": "#c4e7ff",
+                        "on-background": "#dae2fd",
+                        "surface-container-lowest": "#060e20",
+                        "secondary-container": "#3131c0",
+                        "primary": "#8ed5ff",
+                        "on-surface-variant": "#bdc8d1",
+                        "on-surface": "#dae2fd",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed": "#68fcbf",
+                        "on-tertiary-container": "#004e35",
+                        "on-secondary-fixed": "#07006c",
+                        "surface-dim": "#0b1326",
+                        "on-primary-fixed": "#001e2c",
+                        "secondary": "#c0c1ff",
+                        "primary-container": "#38bdf8",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#004c69",
+                        "on-secondary-container": "#b0b2ff",
+                        "primary-fixed-dim": "#7bd0ff",
+                        "on-primary": "#00354a",
+                        "surface-variant": "#2d3449",
+                        "surface-container-high": "#222a3d",
+                        "tertiary-container": "#22c990",
+                        "on-secondary": "#1000a9",
+                        "outline": "#87929a",
+                        "on-tertiary": "#003825",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#131b2e",
+                        "on-tertiary-fixed": "#002114",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "tertiary": "#4ee6aa",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "inverse-primary": "#00668a",
+                        "inverse-surface": "#dae2fd",
+                        "outline-variant": "#3e484f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body">
+<!-- TopAppBar -->
+<header class="bg-[#0b1326] sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#38bdf8]" data-icon="terminal">terminal</span>
+<h1 class="text-2xl font-black tracking-tight text-[#dae2fd]">Adaptly</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#bdc8d1] hover:bg-[#2d3449] hover:text-[#dae2fd] transition-colors p-2 rounded-xl active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col px-4 pt-4 pb-32 gap-6 max-w-lg mx-auto w-full">
+<!-- Lesson Header & Progress -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-xs font-bold tracking-widest text-primary-container uppercase font-label">Current Lesson</span>
+<h2 class="text-xl font-extrabold text-on-surface leading-tight mt-1">Introduction to Python Variables</h2>
+</div>
+<span class="text-sm font-bold text-primary">65%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[65%] rounded-full"></div>
+</div>
+</section>
+<!-- Asymmetric Coding Area -->
+<section class="flex flex-col gap-4">
+<!-- Instruction Prompt -->
+<div class="bg-surface-container-high p-5 rounded-xl border-l-4 border-primary">
+<p class="text-sm leading-relaxed text-on-surface-variant">
+                    Create a variable named <code class="bg-surface-container-highest px-1 rounded text-primary">player_score</code> and assign it a value of <code class="bg-surface-container-highest px-1 rounded text-primary">1500</code>. Then, update it by adding <code class="bg-surface-container-highest px-1 rounded text-primary">bonus_points</code>.
+                </p>
+</div>
+<!-- Code Editor Component -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-2xl relative">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-primary/40"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary/40"></div>
+<span class="text-[10px] font-mono text-outline ml-auto uppercase tracking-tighter">python 3.10</span>
+</div>
+<div class="font-mono text-sm leading-6 space-y-1 overflow-x-auto">
+<div class="flex gap-4">
+<span class="text-outline w-4 text-right select-none opacity-50">1</span>
+<p><span class="text-tertiary"># Initialize scoring</span></p>
+</div>
+<div class="flex gap-4">
+<span class="text-outline w-4 text-right select-none opacity-50">2</span>
+<p><span class="text-secondary">bonus_points</span> = <span class="text-primary-container">500</span></p>
+</div>
+<div class="flex gap-4 bg-primary/5 -mx-4 px-4 border-l-2 border-primary">
+<span class="text-primary-container w-4 text-right select-none font-bold">3</span>
+<p class="relative">
+<span class="text-secondary">player_score</span> = <span class="animate-pulse bg-primary/20 rounded">|</span>
+</p>
+</div>
+<div class="flex gap-4">
+<span class="text-outline w-4 text-right select-none opacity-50">4</span>
+<p><span class="text-secondary">total</span> = player_score + bonus_points</p>
+</div>
+<div class="flex gap-4">
+<span class="text-outline w-4 text-right select-none opacity-50">5</span>
+<p><span class="text-tertiary">print</span>(f<span class="text-primary">"Final Score: {total}"</span>)</p>
+</div>
+</div>
+<!-- Floating Glow Effect -->
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 blur-[40px] pointer-events-none"></div>
+</div>
+</section>
+<!-- AI Assistant Popover (Glassmorphism) -->
+<section class="mt-4 relative">
+<div class="backdrop-blur-xl bg-surface-bright/40 rounded-xl p-5 border border-outline-variant/15 shadow-[0px_20px_40px_rgba(0,0,0,0.4)] relative overflow-hidden">
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-primary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-bold text-on-surface">AI Assistant</h3>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                    Remember, in Python, variables are created the moment you first assign a value to them. You don't need to declare their type!
+                </p>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold text-outline-variant uppercase">Hint: Syntax</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold text-outline-variant uppercase">Variable Naming</span>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="grid grid-cols-2 gap-4 mt-auto">
+<button class="bg-surface-variant text-on-surface font-bold py-4 rounded-xl active:scale-95 transition-transform duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="play_arrow">play_arrow</span>
+                Run Code
+            </button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-4 rounded-xl shadow-[0_0_15px_rgba(56,189,248,0.3)] active:scale-95 transition-transform duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="done_all">done_all</span>
+                Submit
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#0b1326]/80 backdrop-blur-xl fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 z-50 border-t border-[#3e484f]/15 shadow-[0px_-10px_30px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center justify-center text-[#bdc8d1] px-4 py-1 hover:text-[#dae2fd] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#38bdf8]/10 text-[#38bdf8] rounded-2xl px-4 py-1 shadow-[0_0_15px_rgba(56,189,248,0.2)]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="school">school</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bdc8d1] px-4 py-1 hover:text-[#dae2fd] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="groups">groups</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label">Community</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bdc8d1] px-4 py-1 hover:text-[#dae2fd] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label">Profile</span>
+</a>
+</nav>
+</body></html>

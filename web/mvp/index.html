@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptly — MVP (демо для инвесторов)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="mvp.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img src="assets/adaptly-logo.png" alt="" width="48" height="48" class="logo" />
+      <div>
+        <h1>Adaptly</h1>
+        <p class="tag">Интерактивное демо · статические экраны (HTML/CSS/JS)</p>
+      </div>
+    </div>
+    <p class="lead">
+      Ниже — макеты из <strong>Google Stitch</strong> (эталон Obsidian-палитры и типографики Manrope + Inter).
+      Откройте любой экран в новой вкладке. Для живого SPA на React см. репозиторий: <code>adaptly/uxui/prototype/</code>.
+    </p>
+  </header>
+
+  <nav class="toolbar" aria-label="Фильтр">
+    <button type="button" class="chip active" data-filter="all">Все</button>
+    <button type="button" class="chip" data-filter="core">Ядро продукта</button>
+    <button type="button" class="chip" data-filter="onboarding">Онбординг</button>
+    <button type="button" class="chip" data-filter="desktop">Десктоп (Stitch 5)</button>
+  </nav>
+
+  <main>
+    <section class="group" data-section="core">
+      <h2>Ядро продукта</h2>
+      <ul class="cards">
+        <li><a class="card" href="screens/dashboard_adaptly.html" data-cat="core"><span class="t">Dashboard</span><span class="d">Аналитика обучения</span></a></li>
+        <li><a class="card" href="screens/lessons_adaptly.html" data-cat="core"><span class="t">Lessons</span><span class="d">Каталог уроков</span></a></li>
+        <li><a class="card" href="screens/coding_lesson_adaptly.html" data-cat="core"><span class="t">Coding lesson</span><span class="d">Урок с кодом</span></a></li>
+        <li><a class="card" href="screens/community_adaptly.html" data-cat="core"><span class="t">Community</span><span class="d">Сообщество</span></a></li>
+        <li><a class="card" href="screens/mentor_adaptly.html" data-cat="core"><span class="t">Mentor</span><span class="d">AI-ментор (mobile)</span></a></li>
+        <li><a class="card" href="screens/mentor_adaptly_desktop.html" data-cat="core"><span class="t">Mentor desktop</span><span class="d">Широкий макет</span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" data-section="onboarding">
+      <h2>Онбординг</h2>
+      <ul class="cards">
+        <li><a class="card" href="screens/onboarding_path_selection_mobile_1.html" data-cat="onboarding"><span class="t">Path mobile 1</span></a></li>
+        <li><a class="card" href="screens/onboarding_path_selection_mobile_2.html" data-cat="onboarding"><span class="t">Path mobile 2</span></a></li>
+        <li><a class="card" href="screens/onboarding_path_selection_desktop_1.html" data-cat="onboarding"><span class="t">Path desktop 1</span></a></li>
+        <li><a class="card" href="screens/onboarding_path_selection_desktop_2.html" data-cat="onboarding"><span class="t">Path desktop 2</span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" data-section="desktop">
+      <h2>Доп. десктоп (архив Stitch 5)</h2>
+      <p class="hint">Дублируют смысл части экранов из Stitch 3, но в другой вёрстке — удобно сравнить.</p>
+      <ul class="cards">
+        <li><a class="card" href="screens/dashboard_adaptly_desktop.html" data-cat="desktop"><span class="t">Dashboard desktop</span></a></li>
+        <li><a class="card" href="screens/coding_lesson_adaptly_desktop.html" data-cat="desktop"><span class="t">Coding lesson desktop</span></a></li>
+        <li><a class="card" href="screens/learning_analytics_desktop.html" data-cat="desktop"><span class="t">Learning analytics desktop</span></a></li>
+        <li><a class="card" href="screens/learning_analytics_mobile.html" data-cat="desktop"><span class="t">Learning analytics mobile</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a href="../index.html">← Заглушка Adaptly</a>
+    · MVP-папка: <code>/adaptly/mvp/</code>
+  </footer>
+
+  <script src="mvp.js"></script>
+</body>
+</html>

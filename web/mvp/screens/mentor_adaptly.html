@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Mentor - Adaptly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0b1326",
+                        "on-primary-container": "#004965",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#68fcbf",
+                        "on-surface": "#dae2fd",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#004e35",
+                        "on-surface-variant": "#bdc8d1",
+                        "surface-container": "#171f33",
+                        "error": "#ffb4ab",
+                        "secondary": "#c0c1ff",
+                        "primary-container": "#38bdf8",
+                        "surface-dim": "#0b1326",
+                        "on-tertiary": "#003825",
+                        "inverse-on-surface": "#283044",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "inverse-primary": "#00668a",
+                        "background": "#0b1326",
+                        "surface-variant": "#2d3449",
+                        "on-primary-fixed": "#001e2c",
+                        "surface-container-lowest": "#060e20",
+                        "surface-container-highest": "#2d3449",
+                        "on-primary": "#00354a",
+                        "surface-container-high": "#222a3d",
+                        "primary": "#8ed5ff",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#45dfa4",
+                        "outline": "#87929a",
+                        "on-secondary-container": "#b0b2ff",
+                        "secondary-container": "#3131c0",
+                        "on-secondary-fixed": "#07006c",
+                        "surface-bright": "#31394d",
+                        "on-secondary": "#1000a9",
+                        "surface-container-low": "#131b2e",
+                        "primary-fixed-dim": "#7bd0ff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "primary-fixed": "#c4e7ff",
+                        "tertiary-container": "#22c990",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-background": "#dae2fd",
+                        "surface-tint": "#7bd0ff",
+                        "on-tertiary-fixed": "#002114",
+                        "tertiary": "#4ee6aa",
+                        "outline-variant": "#3e484f",
+                        "inverse-surface": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "on-primary-fixed-variant": "#004c69"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-sm { text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+        .bg-obsidian-gradient {
+            background: linear-gradient(180deg, #0b1326 0%, #171f33 100%);
+        }
+        .glass-panel {
+            background: rgba(49, 57, 77, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden pb-24">
+<!-- TopAppBar Shell -->
+<header class="bg-[#0b1326]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full z-50 fixed top-0 shadow-[0px_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden ring-2 ring-primary/20">
+<img alt="AI Mentor Avatar" class="w-full h-full object-cover" data-alt="Abstract futuristic AI avatar with glowing cyan circuits on a dark metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUZ96BGiEw5w0oy3JPmCv88NnkqTbxM4TdKHXVB-KY-XFV82cMWx3c4odRbXjrNUnG61cnlI4zjr5qDz1jJpNQvL819XXtHQtTjy_ifVt_lGFwn0cEiJojdFfc3CaEsdII6srZ6xE2VvltpuiWwDUxfgQf2U1I2O-n4wSwVufap0o5ehox2XUOSj0MxCpGfFSxXfCDveQKBEkecCn9fjyrVyVBJmpsA7khliBx2WZ-lluh4JOU3wu-snZ2N3qh1CMJ4QExHKqPXhg"/>
+</div>
+<span class="text-[#38BDF8] font-['Manrope'] font-bold text-lg tracking-tight">Adaptly</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#bdc8d1] hover:bg-[#2d3449] transition-all duration-300 p-2 rounded-lg active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="mt-20 px-4 space-y-6 max-w-lg mx-auto">
+<!-- Knowledge Graph Visualization Section -->
+<section class="relative overflow-hidden rounded-xl h-48 bg-surface-container-lowest shadow-inner group">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_50%,_#38bdf822_0%,_transparent_70%)]"></div>
+<!-- Mock Node Network -->
+<div class="absolute inset-0 p-4">
+<div class="relative w-full h-full">
+<!-- Central Node -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+<div class="w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#38bdf8]"></div>
+<span class="text-[10px] uppercase tracking-tighter mt-2 block font-bold text-primary">Python Variables</span>
+</div>
+<!-- Branch Nodes -->
+<div class="absolute top-1/4 left-1/4 w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="absolute bottom-1/4 right-1/4 w-2 h-2 bg-tertiary rounded-full shadow-[0_0_8px_#4ee6aa]"></div>
+<div class="absolute top-1/3 right-1/3 w-2 h-2 bg-outline-variant rounded-full"></div>
+<!-- Connector Lines (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-outline-variant/30 stroke-1">
+<line x1="25%" x2="50%" y1="25%" y2="50%"></line>
+<line x1="75%" x2="50%" y1="75%" y2="50%"></line>
+<line x1="66%" x2="50%" y1="33%" y2="50%"></line>
+</svg>
+</div>
+</div>
+<div class="absolute bottom-3 left-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">hub</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Active Knowledge Context</span>
+</div>
+</section>
+<!-- Learning Insights (Bento Style) -->
+<section class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col gap-1 border-l-2 border-primary/40">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Session Duration</span>
+<span class="text-xl font-headline font-extrabold text-on-surface">42<span class="text-sm ml-1 font-normal text-on-surface-variant">min</span></span>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col gap-1 border-l-2 border-tertiary/40">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Hints Generated</span>
+<span class="text-xl font-headline font-extrabold text-on-surface">3</span>
+</div>
+</section>
+<!-- Chat Interface Section -->
+<section class="space-y-4">
+<div class="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+<!-- AI Message -->
+<div class="flex gap-3 items-start">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex-shrink-0 flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="glass-panel p-4 rounded-2xl rounded-tl-none border border-outline-variant/10 max-w-[85%]">
+<p class="text-sm leading-relaxed text-on-surface">Looking at your progress in **Python Variables**, you're ready to tackle logical flow. Shall we move to **Conditionals** next?</p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-3 items-start justify-end">
+<div class="bg-primary-container/10 p-4 rounded-2xl rounded-tr-none border border-primary/20 max-w-[85%]">
+<p class="text-sm leading-relaxed text-on-surface">Yes, but I want to review compound conditionals again first.</p>
+</div>
+<div class="w-8 h-8 rounded-lg bg-primary flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+</div>
+<!-- AI Message 2 -->
+<div class="flex gap-3 items-start">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex-shrink-0 flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="glass-panel p-4 rounded-2xl rounded-tl-none border border-outline-variant/10 max-w-[85%]">
+<p class="text-sm leading-relaxed text-on-surface">Understood. I've curated a review module for **Compound Conditionals** and **Strings**. Check the recommendations below.</p>
+</div>
+</div>
+</div>
+<!-- Input area (Not shell-level, screen-specific) -->
+<div class="bg-surface-container-lowest rounded-full px-4 py-2 flex items-center gap-3 border border-outline-variant/10">
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-grow text-on-surface placeholder:text-on-surface-variant" placeholder="Ask your mentor..." type="text"/>
+<button class="bg-primary text-on-primary p-2 rounded-full active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</section>
+<!-- Recommendations Section -->
+<section class="space-y-3">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Curated For You</h3>
+<div class="space-y-2">
+<!-- Next Step Card -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center justify-between border border-primary/10 hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">play_arrow</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Next Step: Conditionals</p>
+<p class="text-[11px] text-on-surface-variant">Module 4 • 15 mins</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+<!-- Review Card -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center justify-between border border-tertiary/10 hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary">history</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Review: Strings &amp; Comp. Cond.</p>
+<p class="text-[11px] text-on-surface-variant">Spaced Repetition • 5 mins</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Project & Progress Sparkline -->
+<section class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/10 space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">folder_open</span>
+<span class="text-xs font-bold text-on-surface">Collaborative Project Files</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container bg-surface-variant flex items-center justify-center text-[8px] font-bold">JD</div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px]">bolt</span>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">
+<span>Project Progress</span>
+<span>72%</span>
+</div>
+<!-- Sparkline Mock -->
+<div class="h-8 w-full flex items-end gap-1">
+<div class="bg-primary/20 w-full h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[72%] shadow-[0_0_10px_#8ed5ff]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<div class="pt-2">
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(56,189,248,0.3)] active:scale-95 transition-all">
+                Submit Collaborative Code
+            </button>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#0b1326]/90 backdrop-blur-lg flex justify-around items-center px-4 py-3 pb-safe z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.3)] border-t border-[#3e484f]/15">
+<div class="flex flex-col items-center justify-center text-[#bdc8d1] opacity-70 hover:opacity-100 hover:text-[#8ed5ff] transition-transform active:scale-90">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Learn</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#bdc8d1] opacity-70 hover:opacity-100 hover:text-[#8ed5ff] transition-transform active:scale-90">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Analyze</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#bdc8d1] opacity-70 hover:opacity-100 hover:text-[#8ed5ff] transition-transform active:scale-90">
+<span class="material-symbols-outlined">source</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Files</span>
+</div>
+<!-- Active Tab: AI Mentor / Chat -->
+<div class="flex flex-col items-center justify-center text-[#38BDF8] bg-[#171f33] rounded-xl px-4 py-1 shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-transform active:scale-90">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Chat</span>
+</div>
+</nav>
+</body></html>

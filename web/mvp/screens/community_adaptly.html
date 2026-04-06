@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adaptly - Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#45dfa4",
+                    "inverse-on-surface": "#283044",
+                    "error-container": "#93000a",
+                    "surface-tint": "#7bd0ff",
+                    "background": "#0b1326",
+                    "secondary-fixed": "#e1e0ff",
+                    "on-primary-container": "#004965",
+                    "surface-bright": "#31394d",
+                    "surface-container": "#171f33",
+                    "surface": "#0b1326",
+                    "on-error": "#690005",
+                    "primary-fixed": "#c4e7ff",
+                    "on-background": "#dae2fd",
+                    "surface-container-lowest": "#060e20",
+                    "secondary-container": "#3131c0",
+                    "primary": "#8ed5ff",
+                    "on-surface-variant": "#bdc8d1",
+                    "on-surface": "#dae2fd",
+                    "surface-container-highest": "#2d3449",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "tertiary-fixed": "#68fcbf",
+                    "on-tertiary-container": "#004e35",
+                    "on-secondary-fixed": "#07006c",
+                    "surface-dim": "#0b1326",
+                    "on-primary-fixed": "#001e2c",
+                    "secondary": "#c0c1ff",
+                    "primary-container": "#38bdf8",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed-variant": "#004c69",
+                    "on-secondary-container": "#b0b2ff",
+                    "primary-fixed-dim": "#7bd0ff",
+                    "on-primary": "#00354a",
+                    "surface-variant": "#2d3449",
+                    "surface-container-high": "#222a3d",
+                    "tertiary-container": "#22c990",
+                    "on-secondary": "#1000a9",
+                    "outline": "#87929a",
+                    "on-tertiary": "#003825",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#131b2e",
+                    "on-tertiary-fixed": "#002114",
+                    "on-tertiary-fixed-variant": "#005137",
+                    "tertiary": "#4ee6aa",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "inverse-primary": "#00668a",
+                    "inverse-surface": "#dae2fd",
+                    "outline-variant": "#3e484f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#0b1326] sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#38bdf8]" data-icon="terminal">terminal</span>
+<h1 class="text-2xl font-black tracking-tight text-[#dae2fd] font-headline">Adaptly</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#bdc8d1] hover:bg-[#2d3449] hover:text-[#dae2fd] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-[#bdc8d1] hover:bg-[#2d3449] hover:text-[#dae2fd] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#38bdf8]" data-icon="smart_toy">smart_toy</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-4">
+<!-- Community Tabs -->
+<div class="flex items-center space-x-1 mb-8 overflow-x-auto hide-scrollbar">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold tracking-wide bg-primary/10 text-primary border border-primary/20 shadow-[0_0_15px_rgba(56,189,248,0.1)]">
+                Trending
+            </button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide text-on-surface-variant hover:bg-surface-container-highest transition-all">
+                My Feed
+            </button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide text-on-surface-variant hover:bg-surface-container-highest transition-all">
+                Q&amp;A
+            </button>
+</div>
+<!-- Feed List -->
+<div class="space-y-6">
+<!-- Code Snippet Post -->
+<article class="bg-surface-container rounded-xl overflow-hidden transition-transform active:scale-[0.98] duration-200">
+<div class="p-5">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border border-outline-variant/30 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="portrait of a young professional with dark hair smiling gently, warm lighting, blurred tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABTT_4-c0bu_XG30FeB6_VrW95C4sa-X7LtEes0x5RkbUfYHvanE74cRXc5iMO11TRfED0cX4NKDDBI1S6igJbsRiwwjTaplJsT6zNDmBaom3-7NKI8_zskSYag2ZHdBHLcI16y8osbR9jltCbLb0-tySR4MONoRh-I7oyPb7pEDVuFnY2e97Bc5NLu1oQpApbPM8Jc2L78xBhu3UDgPLe72JZ5cpFN7u2xPv-Bpas5LNc6EdB4A38Mm9lI_U59G_Rm1uyvu_Nwxk"/>
+</div>
+<div>
+<h3 class="text-sm font-bold text-on-surface leading-tight">Alex Rivera</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-bold tracking-wider uppercase border border-tertiary/20">Python Expert</span>
+<span class="text-[10px] text-on-surface-variant">2h ago</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                        Just optimized a recursive function for an ML model. The performance gain is significant! Check out this logic:
+                    </p>
+<!-- Code Block -->
+<div class="bg-surface-container-lowest rounded-lg p-4 font-mono text-xs border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="content_copy">content_copy</span>
+</div>
+<div class="flex gap-4">
+<div class="text-outline text-right select-none opacity-50">
+                                1<br/>2<br/>3<br/>4
+                            </div>
+<code class="text-on-surface leading-relaxed">
+<span class="text-primary">def</span> <span class="text-tertiary">optimize</span>(x):<br/>
+                                  <span class="text-primary-container">return</span> [v <span class="text-primary">for</span> v <span class="text-primary">in</span> x <span class="text-primary">if</span> v % 2 == 0]<br/>
+<br/>
+<span class="text-outline-variant"># Efficient batch processing</span>
+</code>
+</div>
+<div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/5 blur-3xl pointer-events-none"></div>
+</div>
+</div>
+<!-- Post Actions -->
+<div class="px-5 py-3 border-t border-outline-variant/10 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+<span class="text-xs font-bold">128</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-xs font-bold">42</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+</article>
+<!-- Question Post -->
+<article class="bg-surface-container rounded-xl overflow-hidden transition-transform active:scale-[0.98] duration-200">
+<div class="p-5">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border border-outline-variant/30 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="portrait of a man with spectacles, thoughtful expression, clean studio lighting, teal background tint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBafmog6NyzbQAt74Sn4rALT76v44sOALJYBdJpfFeSOpCxQaKZTPxAEfkYA6OQSv-6q6LWTRuU8MdSfZTri0UoYCVgNnGobJewfVmEG7JsyYmSfGkZKRQJq5D6crBeKbCUDenCixEIKPMMjg0FK1ebcLH1ny4G5zw5it_v3uLmtgQyEwZXeVHKPSaIee8l-7-qg9IAbWOls6AztXbeRkwCvSJQfT5dBAySzdJM2V3hIE2OL8tZOkBt0k2ipl0-VX2HtQ-I4g-jmBY"/>
+</div>
+<div>
+<h3 class="text-sm font-bold text-on-surface leading-tight">Sarah Chen</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold tracking-wider uppercase border border-primary/20">ML Enthusiast</span>
+<span class="text-[10px] text-on-surface-variant">5h ago</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant"><span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<h2 class="text-lg font-bold text-on-surface mb-2 font-headline leading-snug">Best way to structure datasets for Transformer models?</h2>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                        I'm struggling with the data pipeline for a new LLM project. Any tips on balancing memory usage and training speed?
+                    </p>
+<!-- Image Attachment -->
+<div class="rounded-lg overflow-hidden border border-outline-variant/10 aspect-video relative group">
+<img alt="Post content" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close up of glowing blue circuit board tracks with soft bokeh lighting, futuristic high-tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAtZVMUpCB6BybHikfd484den5EX8AEsYCmOWnkkY9HsnL9yc5wrB8uhNb1eMjr6keF0N5ZoNkRpJZOqicYwdiD5lDmLi90J0oM7SNfEHnUTm-EdQmQoL3xaj-fhYVOwqqwzU62ZMgmkFCtYR1oN_iW-vmOn9lX0kt0GB9cVJmrjEtXccphb2hrxTk-fyphVcYyv6ClAO_imG6LLHoR_6RBPNmGwb9hbN1o68qsFUbkb1Fzy-rWsOQkMUc5nFzuWDtn56_mDXVj0s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+</div>
+</div>
+<div class="px-5 py-3 border-t border-outline-variant/10 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+<span class="text-xs font-bold">84</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-xs font-bold">12</span>
+</button>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+</article>
+<!-- Poll Post (Bento style) -->
+<article class="bg-surface-container rounded-xl p-5">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined" data-icon="poll">poll</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-on-surface leading-tight">Adaptly Community Poll</h3>
+<span class="text-[10px] text-on-surface-variant">Sponsored</span>
+</div>
+</div>
+<h2 class="text-base font-bold text-on-surface mb-4">Which framework do you prefer for production?</h2>
+<div class="space-y-3">
+<div class="relative h-12 rounded-lg bg-surface-container-lowest overflow-hidden flex items-center px-4 group cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-primary/10 w-[65%]"></div>
+<div class="relative flex justify-between w-full text-sm font-semibold">
+<span class="text-on-surface">PyTorch</span>
+<span class="text-primary">65%</span>
+</div>
+</div>
+<div class="relative h-12 rounded-lg bg-surface-container-lowest overflow-hidden flex items-center px-4 cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-primary/10 w-[35%]"></div>
+<div class="relative flex justify-between w-full text-sm font-semibold">
+<span class="text-on-surface">TensorFlow</span>
+<span class="text-on-surface-variant">35%</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed right-6 bottom-28 w-14 h-14 bg-gradient-to-tr from-primary to-primary-container text-on-primary rounded-full shadow-[0_10px_25px_rgba(56,189,248,0.4)] flex items-center justify-center z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#0b1326]/80 backdrop-blur-xl z-50 border-t border-[#3e484f]/15">
+<a class="flex flex-col items-center justify-center text-[#bdc8d1] px-4 py-1 hover:text-[#dae2fd] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bdc8d1] px-4 py-1 hover:text-[#dae2fd] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label mt-1">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#38bdf8]/10 text-[#38bdf8] rounded-2xl px-4 py-1 shadow-[0_0_15px_rgba(56,189,248,0.2)] scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label mt-1">Community</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bdc8d1] px-4 py-1 hover:text-[#dae2fd] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-label mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

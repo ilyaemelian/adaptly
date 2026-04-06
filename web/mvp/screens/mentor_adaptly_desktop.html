@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#0b1326",
+                "on-primary-container": "#004965",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#68fcbf",
+                "on-surface": "#dae2fd",
+                "on-error": "#690005",
+                "on-tertiary-container": "#004e35",
+                "on-surface-variant": "#bdc8d1",
+                "surface-container": "#171f33",
+                "error": "#ffb4ab",
+                "secondary": "#c0c1ff",
+                "primary-container": "#38bdf8",
+                "surface-dim": "#0b1326",
+                "on-tertiary": "#003825",
+                "inverse-on-surface": "#283044",
+                "secondary-fixed-dim": "#c0c1ff",
+                "inverse-primary": "#00668a",
+                "background": "#0b1326",
+                "surface-variant": "#2d3449",
+                "on-primary-fixed": "#001e2c",
+                "surface-container-lowest": "#060e20",
+                "surface-container-highest": "#2d3449",
+                "on-primary": "#00354a",
+                "surface-container-high": "#222a3d",
+                "primary": "#8ed5ff",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#45dfa4",
+                "outline": "#87929a",
+                "on-secondary-container": "#b0b2ff",
+                "secondary-container": "#3131c0",
+                "on-secondary-fixed": "#07006c",
+                "surface-bright": "#31394d",
+                "on-secondary": "#1000a9",
+                "surface-container-low": "#131b2e",
+                "primary-fixed-dim": "#7bd0ff",
+                "on-secondary-fixed-variant": "#2f2ebe",
+                "primary-fixed": "#c4e7ff",
+                "tertiary-container": "#22c990",
+                "secondary-fixed": "#e1e0ff",
+                "on-background": "#dae2fd",
+                "surface-tint": "#7bd0ff",
+                "on-tertiary-fixed": "#002114",
+                "tertiary": "#4ee6aa",
+                "outline-variant": "#3e484f",
+                "inverse-surface": "#dae2fd",
+                "on-tertiary-fixed-variant": "#005137",
+                "on-primary-fixed-variant": "#004c69"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(49, 57, 77, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(142, 213, 255, 0.15);
+        }
+        .node-glow {
+            box-shadow: 0 0 15px rgba(78, 230, 170, 0.4);
+        }
+        /* Тонкие скроллбары (Firefox + WebKit) */
+        .thin-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(142, 213, 255, 0.35) rgba(23, 31, 51, 0.35);
+        }
+        .thin-scroll::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        .thin-scroll::-webkit-scrollbar-track {
+            background: rgba(23, 31, 51, 0.35);
+            border-radius: 999px;
+        }
+        .thin-scroll::-webkit-scrollbar-thumb {
+            background: rgba(142, 213, 255, 0.35);
+            border-radius: 999px;
+        }
+        .thin-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(142, 213, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="thin-scroll h-screen w-72 sticky left-0 top-0 overflow-y-auto bg-[#171f33] flex flex-col py-6 shrink-0 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<h1 class="text-sky-400 font-bold font-headline tracking-tight">Adaptly Pro</h1>
+<p class="text-xs text-slate-400">Intelligent Obsidian</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ease-in-out cursor-pointer hover:bg-[#2d3449]/50">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-sm">Dashboard</span>
+</div>
+<!-- ACTIVE TAB: Mentor (Closest match to primary intent) -->
+<div class="bg-[#2d3449] text-sky-400 border-r border-sky-400 flex items-center gap-3 px-3 py-3 rounded-l-xl transition-all duration-300 ease-in-out cursor-pointer font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-inter text-sm">Learn</span>
+</div>
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ease-in-out cursor-pointer hover:bg-[#2d3449]/50">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-inter text-sm">Code Lab</span>
+</div>
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ease-in-out cursor-pointer hover:bg-[#2d3449]/50">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-inter text-sm">Models</span>
+</div>
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ease-in-out cursor-pointer hover:bg-[#2d3449]/50">
+<span class="material-symbols-outlined">group</span>
+<span class="font-inter text-sm">Community</span>
+</div>
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ease-in-out cursor-pointer hover:bg-[#2d3449]/50">
+<span class="material-symbols-outlined">history</span>
+<span class="font-inter text-sm">History</span>
+</div>
+</nav>
+<div class="px-4 mt-8">
+<button class="w-full py-3 bg-surface-variant text-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-surface-bright transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">add</span>
+                    New Project
+                </button>
+</div>
+<div class="mt-auto px-4 space-y-1">
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl cursor-pointer hover:bg-[#2d3449]/50 transition-colors">
+<span class="material-symbols-outlined">help</span>
+<span class="font-inter text-sm">Help</span>
+</div>
+<div class="text-slate-400 hover:text-white flex items-center gap-3 px-3 py-3 rounded-xl cursor-pointer hover:bg-[#2d3449]/50 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-inter text-sm">Logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative overflow-hidden bg-surface">
+<!-- TopNavBar Component -->
+<header class="w-full sticky top-0 z-40 bg-[#0b1326]/80 backdrop-blur-xl flex justify-between items-center px-6 py-3 w-full ml-auto shadow-2xl shadow-black/40">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-sky-400 tracking-tighter font-manrope">Adaptly</span>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 text-sm">search</span>
+<input class="bg-surface-container-lowest border-none rounded-xl py-2 pl-10 pr-4 text-sm text-on-surface w-64 focus:ring-1 focus:ring-sky-400 transition-all" placeholder="Search knowledge base..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Upgrade</button>
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined p-2 hover:bg-white/5 rounded-lg cursor-pointer transition-colors">notifications</span>
+<span class="material-symbols-outlined p-2 hover:bg-white/5 rounded-lg cursor-pointer transition-colors">settings</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-sky-400/30">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional portrait of a young tech professional with a clean modern aesthetic and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlaG7kpkqIINh3dLF8-G1fAwF7fsyrm0uCjyEYXury7OnL-DBBy-puTocSW8J_IuJg2HL5-0yVZ-mz827FDUAjTshbDB8UiRQvKDayrNw-HEy7ndTnnI3PrE9Eo5ahup5L0v-STKEpun1guuJjRBxnLDxDf5nm73N3dzCS8-PaHQQDjUgNH67YVDUiXQePiMS5LMPRxy7_Bmj1qt0-10AcI5VYyFuiHcFP6Thnssv3JokRwpUMdoioPVRtg7NkDPB4xB3Xv9iPkpU"/>
+</div>
+</div>
+</header>
+<!-- Screen Content: Mentor Desktop -->
+<div class="flex-1 flex p-6 gap-6 overflow-hidden">
+<!-- Left: AI Mentor Chat -->
+<section class="flex-[1.2] flex flex-col bg-surface-container rounded-3xl overflow-hidden relative border border-outline-variant/10">
+<div class="px-6 py-4 bg-surface-container-high flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></div>
+<span class="font-headline font-bold text-on-surface">AI Mentor: Athena</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Context: Neural Networks &amp; Obsidian Logic</span>
+</div>
+<!-- Chat Messages -->
+<div class="thin-scroll flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Bot Message -->
+<div class="flex gap-4 max-w-[85%]">
+<div class="w-8 h-8 rounded-lg bg-surface-bright flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="space-y-2">
+<div class="bg-surface-container-highest p-4 rounded-2xl rounded-tl-none text-on-surface text-sm leading-relaxed">
+                                    I've analyzed your current project architecture. Based on the Knowledge Graph to your right, you've mastered the <span class="text-tertiary">Recursive Data Flows</span>, but there's a slight optimization possible in your <span class="text-primary font-mono">ProcessHandler</span> class. Would you like to review the refactor?
+                                </div>
+<span class="text-[10px] text-on-surface-variant px-1">Just now</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-4 max-w-[85%] ml-auto flex-row-reverse">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container text-lg">person</span>
+</div>
+<div class="space-y-2 text-right">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none text-sm leading-relaxed shadow-lg shadow-primary/10">
+                                    Yes, please. Show me how that relates to the performance bottleneck I saw in the History tab.
+                                </div>
+<span class="text-[10px] text-on-surface-variant px-1">2m ago</span>
+</div>
+</div>
+<!-- Bot Code Example -->
+<div class="flex gap-4 max-w-[90%]">
+<div class="w-8 h-8 rounded-lg bg-surface-bright flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="space-y-3 w-full">
+<div class="bg-surface-container-highest p-4 rounded-2xl rounded-tl-none space-y-4">
+<p class="text-on-surface text-sm">Here is the optimized logical flow for the handler:</p>
+<div class="thin-scroll bg-surface-container-lowest rounded-xl p-4 font-mono text-xs text-primary-fixed-dim border border-white/5 overflow-x-auto">
+<div class="flex gap-4 border-b border-white/5 pb-2 mb-2 opacity-50">
+<span>index.ts</span>
+<span>Refactor_v2</span>
+</div>
+<code><span class="text-tertiary">export const</span> handleProcess = (<span class="text-secondary">data</span>) =&gt; {<br/>
+                                          <span class="text-outline">// Optimized memoization hook</span><br/>
+                                          <span class="text-tertiary">const</span> result = useMemo(() =&gt; transform(data), [data]);<br/>
+                                          <span class="text-tertiary">return</span> result;<br/>
+                                        }</code>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-6 pt-0">
+<div class="bg-surface-container-lowest rounded-2xl p-2 flex items-center gap-2 border border-outline-variant/20 focus-within:border-primary/50 transition-all">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2" placeholder="Ask your mentor anything..." type="text"/>
+<button class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Right: Knowledge Graph & Insights -->
+<section class="thin-scroll flex-[0.8] flex flex-col gap-6 overflow-y-auto pr-2">
+<!-- Knowledge Graph Visualizer -->
+<div class="bg-surface-container-high rounded-3xl p-6 h-80 relative overflow-hidden group">
+<div class="flex justify-between items-center mb-4 relative z-10">
+<h3 class="font-headline font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hub</span>
+                                Knowledge Graph
+                            </h3>
+<span class="bg-surface-container text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded-full text-tertiary">Interactive</span>
+</div>
+<!-- Visual Graph Simulation -->
+<div class="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/10 rounded-full animate-[pulse_6s_infinite]"></div>
+<!-- Nodes -->
+<div class="absolute top-[20%] left-[30%] w-3 h-3 bg-tertiary rounded-full node-glow"></div>
+<div class="absolute top-[60%] left-[20%] w-4 h-4 bg-primary rounded-full node-glow"></div>
+<div class="absolute top-[40%] left-[70%] w-3 h-3 bg-secondary rounded-full node-glow"></div>
+<div class="absolute top-[75%] left-[65%] w-5 h-5 bg-tertiary rounded-full node-glow"></div>
+<div class="absolute top-[15%] left-[80%] w-2 h-2 bg-primary-container rounded-full"></div>
+<!-- Connection Lines (SVG) -->
+<svg class="absolute inset-0 w-full h-full stroke-white/10 stroke-1" fill="none">
+<line x1="30%" x2="70%" y1="20%" y2="40%"></line>
+<line x1="20%" x2="65%" y1="60%" y2="75%"></line>
+<line x1="70%" x2="65%" y1="40%" y2="75%"></line>
+<line x1="30%" x2="20%" y1="20%" y2="60%"></line>
+</svg>
+</div>
+<div class="absolute bottom-4 left-4 z-10 text-[10px] text-on-surface-variant max-w-[150px]">
+                            Focus: Advanced Patterns &amp; Data Structures
+                        </div>
+</div>
+<!-- Learning Insights -->
+<div class="bg-surface-container rounded-3xl p-6 border border-outline-variant/10">
+<h3 class="font-headline font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">insights</span>
+                            Learning Insights
+                        </h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-4 rounded-2xl">
+<p class="text-[10px] uppercase text-on-surface-variant font-bold mb-1">Velocity</p>
+<div class="text-2xl font-black text-on-surface tracking-tighter">8.4<span class="text-xs text-tertiary ml-1">↑12%</span></div>
+</div>
+<div class="bg-surface-container-high p-4 rounded-2xl">
+<p class="text-[10px] uppercase text-on-surface-variant font-bold mb-1">Retention</p>
+<div class="text-2xl font-black text-on-surface tracking-tighter">92%</div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs p-3 bg-surface-container-highest rounded-xl">
+<span class="text-on-surface">Top Concept:</span>
+<span class="text-primary font-bold">Dynamic State Logic</span>
+</div>
+</div>
+<!-- Dynamic Recommendations -->
+<div class="flex-1 space-y-4">
+<h3 class="font-headline font-bold text-on-surface text-sm px-2">Next for You</h3>
+<div class="space-y-3">
+<div class="glass-panel p-4 rounded-2xl flex items-center gap-4 hover:translate-x-1 transition-transform cursor-pointer border border-white/5">
+<div class="w-10 h-10 bg-surface-bright rounded-xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">bolt</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-on-surface">Optimize Edge Cases</h4>
+<p class="text-[10px] text-on-surface-variant">Module 4 • 15 min read</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+<div class="glass-panel p-4 rounded-2xl flex items-center gap-4 hover:translate-x-1 transition-transform cursor-pointer border border-white/5">
+<div class="w-10 h-10 bg-surface-bright rounded-xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">code_blocks</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-on-surface">Advanced API Patterns</h4>
+<p class="text-[10px] text-on-surface-variant">Project-based • Lab session</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Global Footer-like Bar -->
+<footer class="mt-auto bg-[#171f33] px-6 py-4 flex items-center justify-between z-50">
+<div class="flex items-center gap-6">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Shared Project Files</span>
+<div class="flex -space-x-2">
+<img alt="React" class="w-8 h-8 rounded-lg border-2 border-[#171f33] bg-surface-bright p-1 object-contain" data-alt="React logo icon on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRl6XobGAAMRenrxtWhIztyjbjlCKlQvcC-pyeWyLAMgEdXNBsek3doEZwe6C-PmNAyOSruJYFia-q54sD1Pf8_Msw20EYFaq8aYytquA5NmGA9NUZaf_8zWu09fq5zUGbFg7hbHV4SfIVPjRY3C_DB9zqKe15LKl_CI0TwcqrgrBpKg57F4Mjgzn7MceTqmwSZDiAfbgqCNnNPnT1ejtNS-nuZf5hGfagoI9js6plD9uM4XG4BdU75hb4Z0-jlbvNHR2rnyg_chs"/>
+<img alt="Tailwind" class="w-8 h-8 rounded-lg border-2 border-[#171f33] bg-surface-bright p-1 object-contain" data-alt="Tailwind CSS logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWKhsG5VrMIAKqDlJ_XyBce93rBAKeAX3LXEbHNEqo981QqNN4Tfr1vD5gif6IDN43mcPrA58krGBJIgOpVy2Y27F6fN-mOXS2IOywTft6x38ErlLDkQyswJkO5J1HzCXpo3DcU7fJmunD_Str9d7bl4hDIGg6ZH59oF36q7gkaAwD6gEj0B-p0Kq-ldISLwHj50ybew1JVHjwCYslR2n4M7YMS0MGAHXkcmP_6HjEGvSiRREM-48UfycwY7btzgwaWd_Cn0dlE1Q"/>
+<div class="w-8 h-8 rounded-lg border-2 border-[#171f33] bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+3</div>
+</div>
+<div class="h-4 w-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs text-on-surface">Collaborative Session Active</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 bg-tertiary text-on-tertiary font-bold rounded-xl flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-tertiary/10">
+<span class="material-symbols-outlined text-lg">rocket_launch</span>
+                        Submit Collaborative Code
+                    </button>
+</div>
+</footer>
+</main>
+</div>
+<!-- AI Assistant Overlap Panel (Glassmorphism) -->
+<div class="fixed bottom-24 right-10 w-80 glass-panel border border-primary/20 rounded-3xl p-5 shadow-2xl z-50 overflow-hidden">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 blur-[50px]"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface">Real-time Check</h5>
+<p class="text-[10px] text-on-surface-variant">Linter and Logic Engine</p>
+</div>
+</div>
+<p class="text-xs text-on-surface mb-4 leading-relaxed">
+                Your recent changes to <span class="text-primary-fixed">auth-provider.ts</span> improved the bundle size by <span class="text-tertiary font-bold">4.2KB</span>.
+            </p>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+</div>
+</div>
+</body></html>
