@@ -1,8 +1,12 @@
-# Static MVP (public demo)
+# `web/mvp`
 
-Open **`index.html`** in a browser or serve the folder with any static server.
+Static demo bundle.
 
-- **Screens:** `screens/*.html` — Tailwind CDN + self-contained markup.  
-- **Assets:** `assets/` — logos used by some screens (`../assets/...` from `screens/`).
+- `index.html` — navigation hub  
+- `screens/*.html` — individual screens (Tailwind CDN, inline theme config per file)  
+- `mvp.css`, `mvp.js` — hub-only styles and filter script  
+- `assets/` — images; from `screens/`, use relative paths `../assets/...`  
 
-See the [repository root README](../../README.md) for scope and what is intentionally **not** included.
+Serve this directory with any static file server or open `index.html` directly (some browsers restrict `file://` fetches; a local HTTP server is preferable).
+
+See repository root `README.md` and `docs/SCOPE.md` for repository boundaries.

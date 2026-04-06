@@ -1,7 +1,15 @@
-# Security
+# Security policy
 
-This repository contains **static client-side demo pages** only. There are no server endpoints or secrets maintained here.
+## Scope
 
-If you believe you have found a security issue related to a **deployed** instance of this demo, please report it responsibly to the project maintainer via GitHub (Issues) or the contact channel listed in the main README.
+This repository ships **static** HTML/CSS/JS. There is no server or secret configuration in-tree.
 
-Do **not** open public issues for sensitive vulnerability details until coordinated disclosure is agreed.
+## Reporting
+
+For vulnerabilities affecting a **public deployment** of these files, open a **private** report via [GitHub Security Advisories](https://docs.github.com/code-security/security-advisories) for this repository, or contact the maintainer via GitHub profile.
+
+Do not post exploit details in public issues before coordination.
+
+## Out of scope
+
+Issues unrelated to this static bundle (e.g. third-party hosting misconfiguration, unrelated products) may be closed without action here.

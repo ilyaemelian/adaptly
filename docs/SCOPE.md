@@ -1,23 +1,20 @@
-# Repository scope (public)
-
-## Purpose
-
-This repository publishes **non-confidential front-end artefacts**: layout, typography, colour system experiments, and click-through demos. It supports due diligence and endorsements **without** disclosing product definition beyond what is already visible in the UI mockups.
+# Scope
 
 ## In scope
 
-- Static pages and client-side styling  
-- Public logo / wordmark assets included in `web/mvp/assets/`  
-- High-level README and changelog  
+- Static HTML pages and embedded / linked CSS and JS  
+- Raster assets under `web/mvp/assets/` referenced by those pages  
+- Repository metadata: `README.md`, `CHANGELOG.md`, `LICENSE`, `SECURITY.md`  
 
-## Out of scope (not stored here)
+## Out of scope (do not commit here)
 
-- Trade secrets, unpublished research, or detailed product requirements  
-- User data, analytics implementations, API keys  
-- Revenue model specifics and investor-only decks  
+- Application or API server source  
+- Database schemas, migrations, or dumps  
+- Secrets: API keys, tokens, `.env` with credentials  
+- Proprietary algorithms, training data, or closed product specifications not needed to render the static pages  
 
-Content that belongs in a **private** repository or data room should never be committed here.
+Material that belongs in a private repository must not be added to this tree.
 
-## Russian summary / Кратко по-русски
+## Rationale
 
-Здесь лежит только **публичный фронтенд-MVP** для демонстрации хода работ. **Суть продукта, алгоритмы и бизнес-логика** намеренно не публикуются; репозиторий — витрина UX, а не исходный код платформы целиком.
+The published tree is limited to artefacts that can be served as **static files** and reviewed without exposing backend or confidential product internals.

@@ -110,4 +110,4 @@ git pull origin main --allow-unrelated-histories
 git push -u origin main
 ```
 
-**Cadence for investors:** merge or push **2–3 small commits per week** (copy tweaks, one new screen, a11y, performance). Prefer conventional prefixes: `feat(web):`, `fix(ui):`, `docs:`.
+**Commits:** prefer short, focused changes; conventional prefixes help history (`feat(web):`, `fix(ui):`, `docs:`, `chore:`).

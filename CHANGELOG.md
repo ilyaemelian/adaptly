@@ -1,15 +1,19 @@
 # Changelog
 
-All notable changes to this **public** repository are documented here.
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) (summary).
 
 ## [0.1.0] — 2026-04-06
 
 ### Added
 
-- Initial public tree: `web/mvp/` static demo (hub, screen library, shared CSS/JS).
-- Documentation: repository scope (`docs/SCOPE.md`), MIT license.
-- UI refinements carried over from internal iteration (e.g. mentor desktop thin scrollbars, logo/wordmark tweaks on selected desktop screens).
+- `web/mvp/`: hub page, 15 screen HTML files, `mvp.css`, `mvp.js`, `assets/`  
+- `docs/SCOPE.md`  
+- `LICENSE` (MIT), `SECURITY.md`, root `README.md`  
+
+### Changed
+
+- UI: scrollbar styling on mentor desktop layout; logo/wordmark on selected desktop screens (prior internal iteration)
 
 ### Notes
 
-- This release is **front-end only**; backend and core product logic remain private.
+- Distribution is static front-end only; no backend in this repository.
