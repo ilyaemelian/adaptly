@@ -5,6 +5,7 @@
 - Static HTML pages and embedded / linked CSS and JS  
 - Raster assets under `web/mvp/assets/` referenced by those pages  
 - Repository metadata: `README.md`, `CHANGELOG.md`, `LICENSE`, `SECURITY.md`  
+- Technical design notes: `ARCHITECTURE.md`, `INTERACTION_MODEL.md`, `UI_PRINCIPLES.md` (descriptive; no executable backend)  
 
 ## Out of scope (do not commit here)
 
