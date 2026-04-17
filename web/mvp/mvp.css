@@ -19,6 +19,8 @@ body {
   background: linear-gradient(180deg, var(--bg) 0%, #0a0e1a 100%);
   color: var(--text);
   line-height: 1.5;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 h1,
@@ -30,7 +32,7 @@ h2 {
 .top {
   max-width: 56rem;
   margin: 0 auto;
-  padding: 2rem 1.25rem 1rem;
+  padding: max(1.5rem, env(safe-area-inset-top)) 1.25rem 1rem;
 }
 
 .brand {
@@ -38,6 +40,13 @@ h2 {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 420px) {
+  .brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .logo {
@@ -78,6 +87,30 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 639px) {
+  .toolbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    gap: 0.45rem;
+    padding-bottom: 0.65rem;
+  }
+  .toolbar::-webkit-scrollbar {
+    height: 3px;
+  }
+  .toolbar::-webkit-scrollbar-thumb {
+    background: rgba(142, 213, 255, 0.35);
+    border-radius: 999px;
+  }
+  .chip {
+    flex: 0 0 auto;
+    min-height: 44px;
+  }
 }
 
 .chip {
@@ -87,11 +120,15 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.45rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 999px;
   border: 1px solid rgba(142, 213, 255, 0.25);
   background: transparent;
   color: var(--muted);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .chip:hover,
@@ -175,10 +212,21 @@ main {
 .foot {
   max-width: 56rem;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 2rem;
+  padding: 1.5rem 1.25rem max(2rem, env(safe-area-inset-bottom));
   font-size: 0.85rem;
   color: var(--muted);
   border-top: 1px solid rgba(62, 72, 79, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .foot a {

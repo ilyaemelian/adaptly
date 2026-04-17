@@ -1,11 +1,59 @@
-# Adaptly — UI prototypes
+# Adaptly · interface prototyping layer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Static front-end prototypes for a learning-analytics style product with mentor-oriented screens (dashboard, lessons, onboarding, and related views).
+## Overview
 
-> **Scope:** this repository contains only client-side HTML/CSS/JS mockups.  
-> Backend, data pipelines, ML models, and core business logic are not included.
+Public **interface prototyping layer** for **Adaptly** — a product-oriented, AI-native learning system. This tree holds static HTML/CSS/JS artefacts: interaction layout, primary user flows, and UI-level behaviour **without** backend services or model inference.
+
+The goal is to separate **interface structure** (navigation, states, feedback patterns) from **implementation** (APIs, data stores, training/personalisation pipelines), so the UI can be reviewed as its own subsystem.
+
+Further reading:
+
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how this repo sits relative to the wider product  
+- [`docs/INTERACTION_MODEL.md`](docs/INTERACTION_MODEL.md) — user-facing states and flow logic at the UI layer  
+- [`docs/UI_PRINCIPLES.md`](docs/UI_PRINCIPLES.md) — visual and interaction constraints  
+- [`docs/SCOPE.md`](docs/SCOPE.md) — explicit in/out of scope  
+
+---
+
+## Scope (this repository)
+
+**Included**
+
+- Static interface prototypes (`web/mvp/`)  
+- Simulated learning flows (navigation only; no live adaptation engine)  
+- Onboarding and session-oriented screens (UI level)  
+- Mentor-style and analytics-oriented interface patterns  
+
+**Use**
+
+- Reference for product-facing design and interface architecture  
+- UX validation and communication of flow structure  
+- Teaching / review of interaction layout (no executable product backend here)  
+
+---
+
+## Repository structure
+
+```
+adaptly/
+├── web/
+│   └── mvp/
+│       ├── index.html        # entry: navigation hub
+│       ├── mvp.css           # hub layout
+│       ├── mvp.js            # hub client script (e.g. filters)
+│       ├── assets/           # raster assets for screens
+│       └── screens/          # individual screens / flows (*.html)
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── INTERACTION_MODEL.md
+│   ├── UI_PRINCIPLES.md
+│   └── SCOPE.md
+├── CHANGELOG.md
+├── SECURITY.md
+└── LICENSE                   # MIT
+```
 
 ---
 
@@ -14,31 +62,36 @@ Static front-end prototypes for a learning-analytics style product with mentor-o
 | Layer | Technology |
 |-------|------------|
 | Markup | HTML5 |
-| Styling | CSS3 · [Tailwind CSS](https://tailwindcss.com) via CDN (per-page config where present) |
-| Fonts | Google Fonts (CDN), e.g. Inter / Manrope on selected screens |
-| Icons | Material Symbols (CDN), where referenced |
-| Scripts | Vanilla JS (`mvp.js` on the hub page) |
-| Build | None — serve `web/mvp` or open `index.html` via a local HTTP server |
+| Styling | CSS3 · [Tailwind CSS](https://tailwindcss.com) via CDN (per-page config where used) |
+| Fonts / icons | Google Fonts, Material Symbols (CDN) where referenced |
+| Scripts | Vanilla JS (hub: `mvp.js`) |
+| Build | None — serve `web/mvp` over HTTP |
 
 ---
 
-## Repository layout
+## Design principles (summary)
 
-```
-adaptly/
-├── web/
-│   └── mvp/
-│       ├── index.html        # Entry / screen hub
-│       ├── mvp.css           # Hub styles
-│       ├── mvp.js            # Hub UI (e.g. filter chips)
-│       ├── assets/           # Images referenced from screens
-│       └── screens/          # Individual UI screens (*.html)
-├── docs/
-│   └── SCOPE.md              # Explicit in/out of scope
-├── CHANGELOG.md
-├── SECURITY.md
-└── LICENSE                   # MIT
-```
+- Clear primary actions and navigation depth  
+- Low cognitive load on first paint; complexity exposed progressively  
+- Tight feedback loops in the UI copy and control patterns (full list: [`docs/UI_PRINCIPLES.md`](docs/UI_PRINCIPLES.md))  
+
+Adaptive behaviour **in production** is assumed to be driven by models and services **outside** this repository; **here**, adaptation is **represented** through static content and layout only.
+
+---
+
+## Excluded by design
+
+This repository does **not** contain:
+
+- Backend services or HTTP APIs  
+- Databases and data pipelines  
+- Authentication, billing, or identity  
+- ML models, trainers, or inference code  
+- Canonical curriculum payloads  
+
+A working MVP stack exists **outside** this public tree; **backend and API surfaces may be published in part later** — not part of this commit scope.
+
+Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
 ---
 
@@ -47,29 +100,15 @@ adaptly/
 ```bash
 cd web/mvp
 python -m http.server 8080
-# http://localhost:8080
 ```
 
-No dependencies to install. No build step. Prefer a static server over `file://` so relative asset paths behave consistently.
+Open `http://localhost:8080`. Use a static server (not `file://`) so relative paths to `assets/` resolve.
 
 ---
 
-## What is excluded
+## Status
 
-See [`docs/SCOPE.md`](docs/SCOPE.md) for the full list. In short:
-
-- Server-side code, APIs, databases  
-- Authentication and billing  
-- ML / personalisation logic  
-- Curriculum content  
-- Internal roadmaps and production systems  
-- Secrets (API keys, credentials)  
-
----
-
-## License
-
-[MIT](LICENSE) — applies to the files in this repository only.
+Early-stage **interface** prototyping. Screens and flows change without a semver guarantee on copy or markup.
 
 ---
 
@@ -81,4 +120,4 @@ See [`docs/SCOPE.md`](docs/SCOPE.md) for the full list. In short:
 
 ## Trademark
 
-*Adaptly* is used here to label this UI bundle. Other rights may apply.
+*Adaptly* identifies this product interface work. Other rights may apply.

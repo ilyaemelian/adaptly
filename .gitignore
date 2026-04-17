@@ -10,3 +10,6 @@ dist/
 .idea/
 *.zip
 *.local
+
+# Maintainer-only notes (local paths); never publish to public repo
+docs/PUBLISH.md
