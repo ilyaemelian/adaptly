@@ -48,6 +48,7 @@ adaptly/
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   ├── INTERACTION_MODEL.md
+│   ├── MVP_ROADMAP.md
 │   ├── UI_PRINCIPLES.md
 │   └── SCOPE.md
 ├── CHANGELOG.md
@@ -83,13 +84,11 @@ Adaptive behaviour **in production** is assumed to be driven by models and servi
 
 This repository does **not** contain:
 
-- Backend services or HTTP APIs  
+- Backend services or HTTP APIs
 - Databases and data pipelines  
 - Authentication, billing, or identity  
 - ML models, trainers, or inference code  
 - Canonical curriculum payloads  
-
-A working MVP stack exists **outside** this public tree; **backend and API surfaces may be published in part later** — not part of this commit scope.
 
 Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
@@ -99,7 +98,7 @@ Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
 ```bash
 cd web/mvp
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 Open `http://localhost:8080`. Use a static server (not `file://`) so relative paths to `assets/` resolve.
@@ -108,7 +107,7 @@ Open `http://localhost:8080`. Use a static server (not `file://`) so relative pa
 
 ## Status
 
-Early-stage **interface** prototyping. Screens and flows change without a semver guarantee on copy or markup.
+Public, limited interface layer for review. Private MVP implementation details live outside this open repository.
 
 ---
 
