@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptly Investor MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark">A</span>
+        <div>
+          <p class="eyebrow">Investor MVP</p>
+          <h1>Adaptly live demo</h1>
+        </div>
+      </div>
+      <span id="apiStatus" class="status">Подключение к API...</span>
+    </header>
+
+    <section class="hero">
+      <article class="panel">
+        <p class="eyebrow">Live vertical slice</p>
+        <h2>Персональный учебный путь на API-данных.</h2>
+        <p class="hero-copy">Демо связывает профиль, dashboard, следующий урок и mentor hint в один проверяемый сценарий.</p>
+        <div class="actions">
+          <button id="completeLesson" class="button" type="button">Завершить рекомендованный урок</button>
+        </div>
+      </article>
+
+      <article class="panel metric">
+        <span class="label">Overall mastery</span>
+        <strong id="mastery" class="score">--%</strong>
+        <div class="bar"><div id="masteryBar" class="fill"></div></div>
+        <p id="learnerTrack">...</p>
+      </article>
+    </section>
+
+    <section class="grid" aria-live="polite">
+      <article class="lesson">
+        <header>
+          <span class="label">Learner</span>
+          <span id="learnerName" class="pill">...</span>
+        </header>
+        <h3 id="lessonTitle">...</h3>
+        <p id="lessonMeta" class="meta">...</p>
+      </article>
+
+      <article class="mentor">
+        <header>
+          <span class="label">Mentor hint</span>
+          <span class="pill">AI guide</span>
+        </header>
+        <p id="mentorHint" class="quote">...</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
