@@ -38,9 +38,6 @@ Further reading:
 
 ```
 adaptly/
-├── apps/
-│   ├── backend/       # investor-MVP demo API
-│   └── frontend/      # investor-MVP demo UI
 ├── web/
 │   └── mvp/
 │       ├── index.html        # entry: navigation hub
@@ -69,7 +66,6 @@ adaptly/
 | Styling | CSS3 · [Tailwind CSS](https://tailwindcss.com) via CDN (per-page config where used) |
 | Fonts / icons | Google Fonts, Material Symbols (CDN) where referenced |
 | Scripts | Vanilla JS (hub: `mvp.js`) |
-| Demo API | Python standard library HTTP server |
 | Build | None — serve `web/mvp` over HTTP |
 
 ---
@@ -86,35 +82,19 @@ Adaptive behaviour **in production** is assumed to be driven by models and servi
 
 ## Excluded by design
 
-This repository does **not** contain production:
+This repository does **not** contain:
 
+- Backend services or HTTP APIs
 - Databases and data pipelines  
 - Authentication, billing, or identity  
 - ML models, trainers, or inference code  
 - Canonical curriculum payloads  
-
-The `apps/` directory contains a local, non-secret investor-MVP slice only.
 
 Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
 ---
 
 ## Run locally
-
-Investor MVP (run in two terminals):
-
-```bash
-python3 apps/backend/server.py
-```
-
-```bash
-cd apps/frontend
-python3 -m http.server 5173
-```
-
-Open `http://localhost:5173`.
-
-Static prototype archive:
 
 ```bash
 cd web/mvp
@@ -127,7 +107,7 @@ Open `http://localhost:8080`. Use a static server (not `file://`) so relative pa
 
 ## Status
 
-Early investor-MVP development. `apps/` contains a local demo slice; `web/mvp/` remains the static prototype archive.
+Public, limited interface layer for review. Private MVP implementation details live outside this open repository.
 
 ---
 

@@ -1,24 +1,23 @@
-# Отчёт о старте MVP-разработки
+# Отчёт о публичном MVP-планировании
 
 ## Что сделано
 
-- Составлен roadmap первого investor MVP в `docs/MVP_ROADMAP.md`.
-- Добавлен минимальный backend API в `apps/backend`.
-- Добавлен frontend demo dashboard в `apps/frontend`.
-- Обновлены `README.md`, `docs/SCOPE.md` и `docs/ARCHITECTURE.md` под новый runnable MVP-slice.
+- Публичная ветка возвращена к ограниченному disclosure-scope: без runnable backend/frontend кода.
+- Обновлён `docs/MVP_ROADMAP.md` как investor-facing план, а не техническая спецификация.
+- Обновлены `README.md`, `docs/SCOPE.md` и `docs/ARCHITECTURE.md`, чтобы явно отделить открытый UI-слой от private implementation.
 
-## Как запустить
+## Важные ограничения
 
-1. Backend: `python3 apps/backend/server.py`.
-2. Frontend: `cd apps/frontend && python3 -m http.server 5173`.
-3. Открыть `http://127.0.0.1:5173`.
+- В открытый GitHub не добавляются backend, агентные пайплайны, модели, prompts, ключи, схемы данных и сырые реализации.
+- Статические HTML-экраны остаются прототипом: их ещё нужно разрезать на mobile-first frontend-компоненты в private ветке/репозитории.
+- Презентация и SVG-схема архитектуры не найдены в текущем checkout; их нужно подключить как приватный источник требований.
 
-## Проверенный demo path
+## Публичный фокус roadmap
 
-- Frontend получает данные из `GET /api/demo-state`.
-- Кнопка завершения урока вызывает `POST /api/progress`.
-- UI обновляет mastery с 78% до 82% и streak с 7 до 8 без перезагрузки.
+- Mobile-first learning flow для обучения в дороге.
+- AI mentor / agent как управляемый product surface.
+- Voice-assisted coding input как перспективный demo capability.
 
 ## Следующий шаг
 
-- Добавить onboarding route и demo-session, затем заменить in-memory progress на простое постоянное хранилище.
+- Перенести реализацию backend/frontend, агентной логики и voice pipeline в закрытую рабочую среду; в public ветке оставлять только безопасные UX-артефакты и краткие investor-facing материалы.
