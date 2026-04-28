@@ -48,7 +48,6 @@ adaptly/
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   ├── INTERACTION_MODEL.md
-│   ├── MVP_ROADMAP.md
 │   ├── UI_PRINCIPLES.md
 │   └── SCOPE.md
 ├── CHANGELOG.md
@@ -90,7 +89,7 @@ This repository does **not** contain:
 - ML models, trainers, or inference code  
 - Canonical curriculum payloads  
 
-A working MVP stack exists **outside** this public tree. Public files may describe the investor-facing product direction, but private backend, AI-agent, voice, data, and architecture details must stay outside this open repository.
+A working MVP stack exists **outside** this public tree; **backend and API surfaces may be published in part later** — not part of this commit scope.
 
 Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
@@ -109,7 +108,7 @@ Open `http://localhost:8080`. Use a static server (not `file://`) so relative pa
 
 ## Status
 
-Public, limited interface layer for review. Private MVP implementation details live outside this open repository.
+Early-stage **interface** prototyping. Screens and flows change without a semver guarantee on copy or markup.
 
 ---
 
