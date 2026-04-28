@@ -38,6 +38,9 @@ Further reading:
 
 ```
 adaptly/
+├── apps/
+│   ├── backend/       # investor-MVP demo API
+│   └── frontend/      # investor-MVP demo UI
 ├── web/
 │   └── mvp/
 │       ├── index.html        # entry: navigation hub
@@ -48,6 +51,7 @@ adaptly/
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   ├── INTERACTION_MODEL.md
+│   ├── MVP_ROADMAP.md
 │   ├── UI_PRINCIPLES.md
 │   └── SCOPE.md
 ├── CHANGELOG.md
@@ -65,6 +69,7 @@ adaptly/
 | Styling | CSS3 · [Tailwind CSS](https://tailwindcss.com) via CDN (per-page config where used) |
 | Fonts / icons | Google Fonts, Material Symbols (CDN) where referenced |
 | Scripts | Vanilla JS (hub: `mvp.js`) |
+| Demo API | Python standard library HTTP server |
 | Build | None — serve `web/mvp` over HTTP |
 
 ---
@@ -81,15 +86,14 @@ Adaptive behaviour **in production** is assumed to be driven by models and servi
 
 ## Excluded by design
 
-This repository does **not** contain:
+This repository does **not** contain production:
 
-- Backend services or HTTP APIs  
 - Databases and data pipelines  
 - Authentication, billing, or identity  
 - ML models, trainers, or inference code  
 - Canonical curriculum payloads  
 
-A working MVP stack exists **outside** this public tree; **backend and API surfaces may be published in part later** — not part of this commit scope.
+The `apps/` directory contains a local, non-secret investor-MVP slice only.
 
 Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
@@ -97,9 +101,24 @@ Details: [`docs/SCOPE.md`](docs/SCOPE.md).
 
 ## Run locally
 
+Investor MVP (run in two terminals):
+
+```bash
+python3 apps/backend/server.py
+```
+
+```bash
+cd apps/frontend
+python3 -m http.server 5173
+```
+
+Open `http://localhost:5173`.
+
+Static prototype archive:
+
 ```bash
 cd web/mvp
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 Open `http://localhost:8080`. Use a static server (not `file://`) so relative paths to `assets/` resolve.
@@ -108,7 +127,7 @@ Open `http://localhost:8080`. Use a static server (not `file://`) so relative pa
 
 ## Status
 
-Early-stage **interface** prototyping. Screens and flows change without a semver guarantee on copy or markup.
+Early investor-MVP development. `apps/` contains a local demo slice; `web/mvp/` remains the static prototype archive.
 
 ---
 
